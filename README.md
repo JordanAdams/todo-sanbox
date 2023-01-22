@@ -14,7 +14,7 @@ Inspired by [TodoMVC](https://todomvc.com/) and [RealWorld](https://github.com/g
 
 #### API
 
-- [/] [Koa](https://github.com/JordanAdams/todo-sandbox/tree/master/api/koa) (REST)
+- [x] [Koa](https://github.com/JordanAdams/todo-sandbox/tree/master/api/koa) (REST)
 - [ ] GraphQL
 - [ ] Rust
 - [ ] Go
@@ -24,7 +24,7 @@ Inspired by [TodoMVC](https://todomvc.com/) and [RealWorld](https://github.com/g
 - [ ] Cloud Functions + API Gateway
 
 #### Frontend
-- [/] [Create React App](https://github.com/JordanAdams/todo-sandbox/tree/master/web/create-react-app)
+- [x] [Create React App](https://github.com/JordanAdams/todo-sandbox/tree/master/web/create-react-app)
 - [ ] Svelte
 - [ ] Remix
 - [ ] Vite
