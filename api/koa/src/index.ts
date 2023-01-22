@@ -1,4 +1,7 @@
-import 'dotenv/config';
+if (process.env.NODE_ENV?.toLowerCase() !== "production") {
+  require('dotenv/config');
+}
+
 import cors from '@koa/cors';
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
@@ -10,7 +13,6 @@ const app = new Koa();
 
 app.use(logging())
 app.use(bodyParser())
-
 
 app.use(cors({ origin: checkOrigin }))
 

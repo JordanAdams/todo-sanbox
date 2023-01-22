@@ -1,5 +1,5 @@
 import { randomUUID } from 'crypto';
-import fs from 'fs/promises';
+import fs from 'fs-extra';
 import path from 'path';
 
 export interface Todo {
@@ -12,6 +12,11 @@ export interface Todo {
 }
 
 const filePath = path.join(__dirname, '../data/todos.json');
+
+if (!fs.existsSync(filePath)) {
+  fs.mkdirSync(path.dirname(filePath));
+  fs.writeFileSync(filePath, '[]');
+}
 
 export const getAllTodos = async (): Promise<Todo[]> => {
   const data = await fs.readFile(filePath)
