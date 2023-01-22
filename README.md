@@ -14,10 +14,35 @@ Inspired by [TodoMVC](https://todomvc.com/) and [RealWorld](https://github.com/g
 
 #### API
 
-- [Koa](https://github.com/JordanAdams/todo-sandbox/tree/master/api/koa) (REST)
+- [/] [Koa](https://github.com/JordanAdams/todo-sandbox/tree/master/api/koa) (REST)
+- [ ] GraphQL
+- [ ] Rust
+- [ ] Go
+- [ ] Clojure
+- [ ] gRPC
+- [ ] tRPC
+- [ ] Cloud Functions + API Gateway
 
 #### Frontend
-- [Create React App](https://github.com/JordanAdams/todo-sandbox/tree/master/web/create-react-app)
+- [/] [Create React App](https://github.com/JordanAdams/todo-sandbox/tree/master/web/create-react-app)
+- [ ] Svelte
+- [ ] Remix
+- [ ] Vite
+
+
+#### Data
+
+- [ ] Redis
+- [ ] MongoDB
+- [ ] Postgres
+- [ ] Google Datastore
+- [ ] Kafka
+
+#### Infra
+
+- [ ] Google Cloud Run
+- [ ] K8s
+- [ ] Terraform
 
 ---
 
