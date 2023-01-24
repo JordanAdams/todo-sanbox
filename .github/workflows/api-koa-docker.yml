@@ -1,6 +1,7 @@
 name: Koa Docker Image
 
 on:
+  workflow_dispatch:
   push:
     branches: [ "master" ]
     paths: [ "api/koa" ]
