@@ -10,6 +10,9 @@ on:
 
 jobs:
   deploy:
+    defaults:
+      run:
+        working-directory: api/koa/.terraform
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
