@@ -47,7 +47,7 @@ jobs:
     - uses: hashicorp/setup-terraform@v2.0.3
     
     - name: Terraform Init
-      run: tf init -backend=false
+      run: terraform init -backend=false
       
     - name: Terraform Apply
       run: |-
