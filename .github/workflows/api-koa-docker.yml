@@ -29,6 +29,8 @@ jobs:
         password: '${{ steps.auth.outputs.access_token }}'
         
     - name: Build the Docker image
+      env:
+        DOCKER_TAG: ${{secrets.GCP_DOCKER_REGISTRY}}:$(github.ref)
       run: |-
-        docker build . --file Dockerfile --tag ${{secrets.GCP_DOCKER_REGISTRY}}:$(date +%s)
-        docker push ${{secrets.GCP_DOCKER_REGISTRY}}:$(github.ref)
+        docker build . --file Dockerfile --tag $DOCKER_TAG
+        docker push ${{secrets.GCP_DOCKER_REGISTRY}}:$DOCKER_TAG
