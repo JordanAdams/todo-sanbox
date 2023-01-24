@@ -1,7 +1,12 @@
-name: api/koa
+name: api/koa - deploy
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - api/koa - build
+    types:
+      - completed
 
 jobs:
   deploy:
