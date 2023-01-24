@@ -1,4 +1,4 @@
-name: Api/Koa
+name: api/koa
 
 on:
   workflow_dispatch:
