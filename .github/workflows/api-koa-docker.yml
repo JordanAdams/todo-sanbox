@@ -1,4 +1,4 @@
-name: Koa Docker Image
+name: Docker
 
 on:
   workflow_dispatch:
@@ -13,4 +13,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{secrets.GCP_DOCKER_REGISTRY}}:$(date +%s)
+      run: docker build . --file api/koa/Dockerfile --tag ${{secrets.GCP_DOCKER_REGISTRY}}:$(date +%s)
