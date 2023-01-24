@@ -1,5 +1,3 @@
-variable "backend_bucket" {}
-
 variable "project" {}
 
 variable "docker_image" {}
@@ -17,7 +15,6 @@ terraform {
   }
 
   backend "gcs" {
-    bucket = var.backend_bucket
     prefix = "api/koa"
   }
 }
