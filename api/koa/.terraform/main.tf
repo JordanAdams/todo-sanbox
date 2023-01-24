@@ -1,3 +1,7 @@
+variable "backend_bucket" {}
+
+variable "project" {}
+
 variable "docker_image" {}
 
 variable "region" {
@@ -11,9 +15,17 @@ terraform {
       version = "4.50.0"
     }
   }
+
+  backend "gcs" {
+    bucket = var.backend_bucket
+    prefix = "api/koa"
+  }
 }
 
-provider "google" {}
+
+provider "google" {
+  project = var.project
+}
 
 resource "google_cloud_run_service" "api-koa" {
   name     = "api-koa"
