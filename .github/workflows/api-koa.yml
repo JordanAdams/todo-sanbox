@@ -6,9 +6,6 @@ on:
     branches: [ "master" ]
     paths: [ "api/koa" ]
 
-env:
-  
-
 jobs:
   build:
     runs-on: ubuntu-latest
