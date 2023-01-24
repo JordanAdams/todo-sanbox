@@ -1,4 +1,4 @@
-name: api/koa
+name: api/koa - build
 
 on:
   workflow_dispatch:
@@ -32,3 +32,5 @@ jobs:
       run: |-
         docker build . --file Dockerfile --tag ${{secrets.GCP_DOCKER_REGISTRY}}/api-koa:latest
         docker push ${{secrets.GCP_DOCKER_REGISTRY}}/api-koa:latest
+
+      
