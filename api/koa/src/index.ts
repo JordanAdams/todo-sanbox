@@ -8,6 +8,7 @@ import bodyParser from 'koa-bodyparser';
 import logging from 'koa-logger'
 import router from './router';
 import { checkOrigin } from './check-origin';
+import { authToken } from './middleware/auth';
 
 const app = new Koa();
 
@@ -15,6 +16,8 @@ app.use(logging())
 app.use(bodyParser())
 
 app.use(cors({ origin: checkOrigin }))
+
+app.use(authToken)
 
 app.use(router.routes());
 app.use(router.allowedMethods());

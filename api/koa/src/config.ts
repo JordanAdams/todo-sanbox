@@ -1,6 +1,6 @@
-function env(key: string, fallback: string): string;
+const env = (key: string): string | undefined => process.env[key];
 
-function env(key: string, fallback?: string): string | undefined {
+const envWithFallback = (key: string, fallback: string): string => {
   const value = process.env[key];
   if (value === undefined) {
     return fallback;
@@ -10,5 +10,6 @@ function env(key: string, fallback?: string): string | undefined {
 }
 
 export default {
-  storeEngine: env('STORE_ENGINE', 'MEMORY')
+  storeEngine: envWithFallback('STORE_ENGINE', 'MEMORY'),
+  authToken: env('AUTH_TOKEN')
 }
