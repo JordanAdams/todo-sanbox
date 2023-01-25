@@ -21,18 +21,19 @@ jobs:
       uses: 'google-github-actions/auth@v1'
       with:
         credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
-        token_format: 'access_token'
+
+    - name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v1'
     
     - uses: hashicorp/setup-terraform@v2.0.3
     
     - name: Terraform Init
-      run: terraform init -backend=false
+      run: |-
+        terraform init \
+          -backend-config="bucket=${{ secrets.TF_BUCKET }}"
       
     - name: Terraform Apply
       run: |-
         terraform apply \
           -var project=${{ secrets.GCP_PROJECT }} \
           -var docker_image=${{ secrets.GCP_DOCKER_REGISTRY }}/api-koa:latest \
-          -var backend_bucket=${{ secrets.TF_BUCKET }}
-
-      

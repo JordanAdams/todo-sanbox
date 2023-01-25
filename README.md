@@ -40,9 +40,9 @@ Inspired by [TodoMVC](https://todomvc.com/) and [RealWorld](https://github.com/g
 
 #### Infra
 
-- [ ] Google Cloud Run
+- [x] [Google Cloud Run](https://github.com/JordanAdams/todo-sandbox/blob/master/api/koa/.terraform/main.tf#L27-L43)
 - [ ] K8s
-- [ ] Terraform
+- [x] [Terraform](https://github.com/JordanAdams/todo-sandbox/blob/master/api/koa/.terraform)
 
 ---
 
