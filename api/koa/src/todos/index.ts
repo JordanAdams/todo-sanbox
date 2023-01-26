@@ -21,11 +21,11 @@ export type GetAllTodos = () => Promise<Todo[]>;
 
 export type GetTodo = (id: string) => Promise<Todo | null>;
 
-type CreateTodoData = Pick<Todo, "title"> & Partial<Pick<Todo, "priority">>
+export type CreateTodoData = Pick<Todo, "title"> & Partial<Pick<Todo, "priority">>
 
 export type CreateTodo = (data: CreateTodoData) => Promise<Todo>
 
-type UpdateTodoData = Partial<Omit<Todo, "id">>;
+export type UpdateTodoData = Partial<Omit<Todo, "id">>;
 
 export type UpdateTodo = (id: string, data: UpdateTodoData) => Promise<Todo | null>
 

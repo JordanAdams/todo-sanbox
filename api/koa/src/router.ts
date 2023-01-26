@@ -1,6 +1,6 @@
 import Router, { IRouterParamContext as RouterContext } from 'koa-router';
 import { DefaultState, ParameterizedContext } from 'koa';
-import { createTodo, getAllTodos, getTodo, Todo, CreateTodo, UpdateTodo, updateTodo, deleteTodo } from './todos';
+import { createTodo, getAllTodos, getTodo, Todo, CreateTodoData, UpdateTodoData, updateTodo, deleteTodo } from './todos';
 
 const router = new Router();
 
@@ -38,7 +38,7 @@ router.get('/todos/:id', async (ctx: GetTodoContext) => {
 })
 
 router.post('/todos', async (ctx: Context<Todo>) => {
-  const body = ctx.request.body as CreateTodo | undefined;
+  const body = ctx.request.body as CreateTodoData | undefined;
   if (!body) {
     return badRequest(ctx);
   }
@@ -50,7 +50,7 @@ router.post('/todos', async (ctx: Context<Todo>) => {
 type UpdateTodoContext = Context<Todo>
 
 router.put('/todos/:id', async (ctx: UpdateTodoContext) => {
-  const body = ctx.request.body as UpdateTodo | undefined;
+  const body = ctx.request.body as UpdateTodoData | undefined;
   if (!body) {
     return badRequest(ctx);
   }
